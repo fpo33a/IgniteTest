@@ -1,0 +1,270 @@
+//https://apacheignite.readme.io/docs/getting-started
+
+C:\frank\apache-ignite-2.7.0-bin\apache-ignite-2.7.0-bin\bin>ignite.bat
+[14:11:30]    __________  ________________
+[14:11:30]   /  _/ ___/ |/ /  _/_  __/ __/
+[14:11:30]  _/ // (7 7    // /  / / / _/
+[14:11:30] /___/\___/_/|_/___/ /_/ /___/
+[14:11:30]
+[14:11:30] ver. 2.7.0#20181130-sha1:256ae401
+[14:11:30] 2018 Copyright(C) Apache Software Foundation
+[14:11:30]
+[14:11:30] Ignite documentation: http://ignite.apache.org
+[14:11:30]
+[14:11:30] Quiet mode.
+[14:11:30]   ^-- Logging to file 'C:\frank\apache-ignite-2.7.0-bin\apache-ignite-2.7.0-bin\work\log\ignite-3fe43f54.0.log'
+[14:11:30]   ^-- Logging by 'JavaLogger [quiet=true, config=null]'
+[14:11:30]   ^-- To see **FULL** console log here add -DIGNITE_QUIET=false or "-v" to ignite.{sh|bat}
+[14:11:30]
+[14:11:31] OS: Windows 8.1 6.3 amd64
+[14:11:31] VM information: Java(TM) SE Runtime Environment 1.8.0_172-b11 Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 25.172-b11
+[14:11:31] Please set system property '-Djava.net.preferIPv4Stack=true' to avoid possible problems in mixed environments.
+[14:11:31] Configured plugins:
+[14:11:31]   ^-- None
+[14:11:31]
+[14:11:31] Configured failure handler: [hnd=StopNodeOrHaltFailureHandler [tryStop=false, timeout=0, super=AbstractFailureHandler [ignoredFailureTypes=[SYSTEM_WORKER_BLOCKED]]]]
+[14:11:36] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides
+[14:11:36] Security status [authentication=off, tls/ssl=off]
+[14:11:43] Performance suggestions for grid  (fix if possible)
+[14:11:43] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[14:11:43]   ^-- Enable G1 Garbage Collector (add '-XX:+UseG1GC' to JVM options)
+[14:11:43]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[14:11:43]   ^-- Disable processing of calls to System.gc() (add '-XX:+DisableExplicitGC' to JVM options)
+[14:11:43] Refer to this page for more performance suggestions: https://apacheignite.readme.io/docs/jvm-and-system-tuning
+[14:11:43]
+[14:11:43] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[14:11:43] Data Regions Configured:
+[14:11:43]   ^-- default [initSize=256,0 MiB, maxSize=1,6 GiB, persistence=false]
+[14:11:43]
+[14:11:43] Ignite node started OK (id=3fe43f54)
+[14:11:43] Topology snapshot [ver=1, locNode=3fe43f54, servers=1, clients=0, state=ACTIVE, CPUs=2, offheap=1.6GB, heap=1.0GB]
+
+
+
+C:\frank\apache-ignite-2.7.0-bin\apache-ignite-2.7.0-bin\bin>sqlline.bat --color=false --verbose=true -u jdbc:ignite:thin://127.0.0.1/
+?[1;34missuing: !connect jdbc:ignite:thin://127.0.0.1/ '' '' org.apache.ignite.IgniteJdbcThinDriver?[m
+?[1;34mConnecting to jdbc:ignite:thin://127.0.0.1/?[m
+?[1;34mConnected to: Apache Ignite (version 2.7.0#20181130-sha1:256ae401)?[m
+?[1;34mDriver: Apache Ignite Thin JDBC Driver (version 2.7.0#20181130-sha1:256ae401)?[m
+?[1;34mAutocommit status: true?[m
+?[1;34mTransaction isolation: TRANSACTION_REPEATABLE_READ?[m
+sqlline version 1.3.0
+0: jdbc:ignite:thin://127.0.0.1/> !dbinfo
+allProceduresAreCallable                          true
+allTablesAreSelectable                            true
+dataDefinitionCausesTransactionCommit             false
+dataDefinitionIgnoredInTransactions               false
+doesMaxRowSizeIncludeBlobs                        false
+getCatalogSeparator
+getCatalogTerm
+getDatabaseProductName                            Apache Ignite
+getDatabaseProductVersion                         2.7.0#20181130-sha1:256ae401
+getDefaultTransactionIsolation                    4
+getDriverMajorVersion                             2
+getDriverMinorVersion                             7
+getDriverName                                     Apache Ignite Thin JDBC Driver
+getDriverVersion                                  2.7.0#20181130-sha1:256ae401
+getExtraNameCharacters
+getIdentifierQuoteString                          "
+getMaxBinaryLiteralLength                         0
+getMaxCatalogNameLength                           0
+getMaxCharLiteralLength                           0
+getMaxColumnNameLength                            0
+getMaxColumnsInGroupBy                            0
+getMaxColumnsInIndex                              0
+getMaxColumnsInOrderBy                            0
+getMaxColumnsInSelect                             0
+getMaxColumnsInTable                              0
+getMaxConnections                                 0
+getMaxCursorNameLength                            0
+getMaxIndexLength                                 0
+getMaxProcedureNameLength                         0
+getMaxRowSize                                     0
+getMaxSchemaNameLength                            0
+getMaxStatementLength                             0
+getMaxStatements                                  0
+getMaxTableNameLength                             0
+getMaxTablesInSelect                              0
+getMaxUserNameLength                              0
+getNumericFunctions
+getProcedureTerm
+getSchemaTerm
+getSearchStringEscape                             \
+getSQLKeywords                                    LIMIT,MINUS,ROWNUM,SYSDATE,SYSTIME,SYSTIMESTAMP,TODAY
+getStringFunctions
+getSystemFunctions
+getTimeDateFunctions
+getURL                                            jdbc:ignite:thin://127.0.0.1:10800
+getUserName
+isCatalogAtStart                                  false
+isReadOnly                                        false
+nullPlusNonNullIsNull                             false
+nullsAreSortedAtEnd                               true
+nullsAreSortedAtStart                             false
+nullsAreSortedHigh                                false
+nullsAreSortedLow                                 true
+storesLowerCaseIdentifiers                        false
+storesLowerCaseQuotedIdentifiers                  false
+storesMixedCaseIdentifiers                        false
+storesMixedCaseQuotedIdentifiers                  true
+storesUpperCaseIdentifiers                        true
+storesUpperCaseQuotedIdentifiers                  true
+supportsAlterTableWithAddColumn                   false
+supportsAlterTableWithDropColumn                  false
+supportsANSI92EntryLevelSQL                       true
+supportsANSI92FullSQL                             false
+supportsANSI92IntermediateSQL                     false
+supportsBatchUpdates                              true
+supportsCatalogsInDataManipulation                false
+supportsCatalogsInIndexDefinitions                false
+supportsCatalogsInPrivilegeDefinitions            false
+supportsCatalogsInProcedureCalls                  false
+supportsCatalogsInTableDefinitions                false
+supportsColumnAliasing                            true
+supportsConvert                                   true
+supportsCoreSQLGrammar                            true
+supportsCorrelatedSubqueries                      true
+supportsDataDefinitionAndDataManipulationTransactionsfalse
+supportsDataManipulationTransactionsOnly          false
+supportsDifferentTableCorrelationNames            true
+supportsExpressionsInOrderBy                      true
+supportsExtendedSQLGrammar                        false
+supportsFullOuterJoins                            false
+supportsGroupBy                                   true
+supportsGroupByBeyondSelect                       true
+supportsGroupByUnrelated                          true
+supportsIntegrityEnhancementFacility              false
+supportsLikeEscapeClause                          true
+supportsLimitedOuterJoins                         true
+supportsMinimumSQLGrammar                         false
+supportsMixedCaseIdentifiers                      false
+supportsMixedCaseQuotedIdentifiers                false
+supportsMultipleResultSets                        true
+supportsMultipleTransactions                      false
+supportsNonNullableColumns                        false
+supportsOpenCursorsAcrossCommit                   false
+supportsOpenCursorsAcrossRollback                 false
+supportsOpenStatementsAcrossCommit                false
+supportsOpenStatementsAcrossRollback              false
+supportsOrderByUnrelated                          true
+supportsOuterJoins                                true
+supportsPositionedDelete                          false
+supportsPositionedUpdate                          false
+supportsSchemasInDataManipulation                 true
+supportsSchemasInIndexDefinitions                 false
+supportsSchemasInPrivilegeDefinitions             false
+supportsSchemasInProcedureCalls                   false
+supportsSchemasInTableDefinitions                 false
+supportsSelectForUpdate                           false
+supportsStoredProcedures                          false
+supportsSubqueriesInComparisons                   true
+supportsSubqueriesInExists                        true
+supportsSubqueriesInIns                           true
+supportsSubqueriesInQuantifieds                   true
+supportsTableCorrelationNames                     true
+supportsTransactions                              true
+supportsUnion                                     true
+supportsUnionAll                                  true
+usesLocalFilePerTable                             false
+usesLocalFiles                                    false
+0: jdbc:ignite:thin://127.0.0.1/>
+
+
+CREATE TABLE City (
+  id LONG PRIMARY KEY, name VARCHAR)
+    WITH "template=replicated";
+    
+CREATE TABLE Person (
+   id LONG, name VARCHAR, city_id LONG, PRIMARY KEY (id, city_id))
+  WITH "backups=1, affinityKey=city_id";
+  
+  
+CREATE INDEX idx_city_name ON City (name);
+CREATE INDEX idx_person_name ON Person (name);
+INSERT INTO City (id, name) VALUES (1, 'Forest Hill');
+INSERT INTO City (id, name) VALUES (2, 'Denver');
+INSERT INTO City (id, name) VALUES (3, 'St. Petersburg');
+INSERT INTO Person (id, name, city_id) VALUES (1, 'John Doe', 3);
+INSERT INTO Person (id, name, city_id) VALUES (2, 'Jane Roe', 2);
+INSERT INTO Person (id, name, city_id) VALUES (3, 'Mary Major', 1);
+INSERT INTO Person (id, name, city_id) VALUES (4, 'Richard Miles', 2);
+
+
+SELECT p.name, c.name  FROM Person p, City c
+WHERE p.city_id = c.id;
+
+0: jdbc:ignite:thin://127.0.0.1/> CREATE TABLE City (
+. . . . . . . . . . . . . . . . >   id LONG PRIMARY KEY, name VARCHAR)
+. . . . . . . . . . . . . . . . >   WITH "template=replicated";
+No rows affected (0,398 seconds)
+0: jdbc:ignite:thin://127.0.0.1/> select * from city;
+?[1;32m+-?[m?[1;32m-------------------------------+-------------------------------?[m?[1;32m-+?[m
+?[1;32m| ?[m?[1m              ID              ?[m?[1;32m | ?[m?[1m             NAME             ?[m?[1;32m |?[m
+?[1;32m+-?[m?[1;32m-------------------------------+-------------------------------?[m?[1;32m-+?[m
+?[1;32m+-?[m?[1;32m-------------------------------+-------------------------------?[m?[1;32m-+?[m
+No rows selected (0,076 seconds)
+0: jdbc:ignite:thin://127.0.0.1/> CREATE TABLE Person (
+. . . . . . . . . . . . . . . . >   id LONG, name VARCHAR, city_id LONG, PRIMARY KEY (id, city_id))
+. . . . . . . . . . . . . . . . >   WITH "backups=1, affinityKey=city_id";
+No rows affected (0,126 seconds)
+0: jdbc:ignite:thin://127.0.0.1/> CREATE INDEX idx_city_name ON City (name);
+No rows affected (0,041 seconds)
+0: jdbc:ignite:thin://127.0.0.1/> CREATE INDEX idx_person_name ON Person (name);
+No rows affected (0,014 seconds)
+0: jdbc:ignite:thin://127.0.0.1/> INSERT INTO City (id, name) VALUES (1, 'Forest Hill');
+1 row affected (0,102 seconds)
+0: jdbc:ignite:thin://127.0.0.1/> INSERT INTO City (id, name) VALUES (2, 'Denver');
+1 row affected (0,004 seconds)
+0: jdbc:ignite:thin://127.0.0.1/> INSERT INTO City (id, name) VALUES (3, 'St. Petersburg');
+1 row affected (0,005 seconds)
+0: jdbc:ignite:thin://127.0.0.1/>
+0: jdbc:ignite:thin://127.0.0.1/> INSERT INTO Person (id, name, city_id) VALUES (1, 'John Doe', 3);
+1 row affected (0,009 seconds)
+0: jdbc:ignite:thin://127.0.0.1/> INSERT INTO Person (id, name, city_id) VALUES (2, 'Jane Roe', 2);
+1 row affected (0,005 seconds)
+0: jdbc:ignite:thin://127.0.0.1/> INSERT INTO Person (id, name, city_id) VALUES (3, 'Mary Major', 1);
+1 row affected (0,004 seconds)
+0: jdbc:ignite:thin://127.0.0.1/> INSERT INTO Person (id, name, city_id) VALUES (4, 'Richard Miles', 2);
+1 row affected (0,004 seconds)
+
+0: jdbc:ignite:thin://127.0.0.1/> SELECT p.name, c.name
+. . . . . . . . . . . . . . . . > FROM Person p, City c
+. . . . . . . . . . . . . . . . > WHERE p.city_id = c.id;
++--------------------------------+--------------------------------+
+|              NAME              |              NAME              |
++--------------------------------+--------------------------------+
+| Jane Roe                       | Denver                         |
+| Richard Miles                  | Denver                         |
+| Mary Major                     | Forest Hill                    |
+| John Doe                       | St. Petersburg                 |
++--------------------------------+--------------------------------+
+4 rows selected (0,072 seconds)
+0: jdbc:ignite:thin://127.0.0.1/>
+0: jdbc:ignite:thin://127.0.0.1/> !quit
+Closing: org.apache.ignite.internal.jdbc.thin.JdbcThinConnection
+C:\frank\apache-ignite-2.7.0-bin\apache-ignite-2.7.0-bin\bin>control.bat --baseline
+Control utility [ver. 2.7.0#20181130-sha1:256ae401]
+2018 Copyright(C) Apache Software Foundation
+User: frank
+--------------------------------------------------------------------------------
+Cluster state: active
+Current topology version: 1
+
+Baseline nodes not found.
+Appuyez sur une touche pour continuer...
+
+
+// FOR TESTING WITH JAVA PROGRAM
+
+DROP TABLE Person;
+
+CREATE TABLE Person (
+   id LONG, name VARCHAR, city_id LONG, PRIMARY KEY (id, city_id))
+  WITH "backups=1, cache_name=App_Person";
+  
+  
+CREATE INDEX idx_person_name ON Person (name);
+INSERT INTO Person (id, name, city_id) VALUES (1, 'John Doe', 3);
+INSERT INTO Person (id, name, city_id) VALUES (2, 'Jane Roe', 2);
+INSERT INTO Person (id, name, city_id) VALUES (3, 'Mary Major', 1);
+INSERT INTO Person (id, name, city_id) VALUES (4, 'Richard Miles', 2);
